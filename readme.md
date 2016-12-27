@@ -28,19 +28,19 @@ If node.js is not already installed, please use this instructions https://nodejs
 
 
 ### Install all dependicies
-d [project home]
+cd [project home]  
 npm install
 
 ### Start the Rest API
-cd [project home]
+cd [project home]  
 node app/server.js
 
 ### Start the API documentation
-cd [project home]
+cd [project home]  
 node_modules/apidoc/bin/apidoc -i ./ -f "server.js" -o apidoc/ 
 
 ### Start the tests
-cd [project home]
+cd [project home]  
 mocha test/TestClimateApi.js 
 
 
