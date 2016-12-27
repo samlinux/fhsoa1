@@ -37,6 +37,20 @@ npm install
 
 **IMPORTANT: For the missing config file contact the author.**
 
+### Get your own Firebase API key
+https://firebase.google.com/
+
+Create a config.js file in to project root directory and paste the following code into it.
+```  
+ cd [project home]
+ vi config.js (and insert the following) 
+ var config = {};
+ config.BaseUrl = 'https://[YOUR-Database].firebaseio.com';
+ config.Token = '[YOUR-APIKEY]';
+ config.Auth = '?auth='+config.Token;
+ module.exports = config;
+```
+
 ### Start the Rest API
 ```
 cd [project home]  
