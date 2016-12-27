@@ -34,7 +34,7 @@ cd [project home]
 npm install
 ```
 
-*For the missing config file contact the author.*
+**IMPORTANT: For the missing config file contact the author.**
 
 ### Start the Rest API
 ```

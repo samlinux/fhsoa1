@@ -2,7 +2,7 @@
   "name": "fh_soa",
   "version": "0.1.0",
   "description": "FH-SOA climate API",
-  "main": "index.js",
+  "main": "server.js",
   "dependencies": {
     "apidoc": "^0.16.1",
     "body-parser": "^1.15.2",

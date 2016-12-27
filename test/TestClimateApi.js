@@ -182,6 +182,22 @@
 				});
 			});
 
+		it('GET /info API is accessible', function(done){
+			//this.skip();
+			api.get('/info')
+				.expect(200)
+				.end(function(err,res){
+				
+				if(err){ 
+					throw err; 
+				}
+			
+               	res.body.should.have.property('version');
+               	expect(res.body.version).to.equal(1);
+
+				done();  
+			});
+		});
 	});
 })();		
 		

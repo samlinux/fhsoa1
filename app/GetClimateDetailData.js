@@ -1,5 +1,5 @@
 /**
- * GetClimateDetailData module.
+ * GetClimateDetailData module
  *
  * @module app/GetClimateDetailData
  * @author rbole <rbole@samlinux.at>

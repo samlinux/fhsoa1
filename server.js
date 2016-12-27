@@ -65,6 +65,24 @@ app.get('/', function (req, res) {
 });
 
 /**
+ * @api {get} /info Check if API is accessible
+ * @apiExample {curl} Example usage:
+ *   curl -i http://localhost:3000/info
+ * @apiGroup climate
+ *
+ * @apiSuccess {Number} version 
+ *
+ * @apiSuccessExample Success-Response:
+ *	HTTP/1.1 200 OK
+ *	"version": 1
+ *
+ * @apiDescription Provides a version number as symbole the api is accessible
+ */
+app.get('/info', function (req, res) {
+	res.json({version:1});
+});
+
+/**
  * @api {get} /:id Get one specific dataset
  * @apiExample {curl} Example usage:
  * curl -X GET -i http://localhost:3000/-KZvAMz9zE4e78U4D7bK -H "Content-Type: application/json"
@@ -223,4 +241,5 @@ app.delete('/', function (req, res) {
 			res.json({data:result});
 		});
 });
+
 
