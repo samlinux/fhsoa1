@@ -25,22 +25,27 @@ What have we done is a REST API build around the google Firebase REST API to sim
 If node.js is not already installed, please use this instructions https://nodejs.org/en/download/package-manager/.
 
 ### Clone the git repo
+https://github.com/samlinux/fhsoa1
 
 
 ### Install all dependicies
+```
 cd [project home]  
 npm install
-
+```
 ### Start the Rest API
+```
 cd [project home]  
 node app/server.js
-
+```
 ### Start the API documentation
+```
 cd [project home]  
 node_modules/apidoc/bin/apidoc -i ./ -f "server.js" -o apidoc/ 
-
+```
 ### Start the tests
+```
 cd [project home]  
 mocha test/TestClimateApi.js 
-
+```
 
