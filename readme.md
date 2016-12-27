@@ -33,6 +33,9 @@ https://github.com/samlinux/fhsoa1
 cd [project home]  
 npm install
 ```
+
+*For the missing config file contact the author.*
+
 ### Start the Rest API
 ```
 cd [project home]  
