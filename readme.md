@@ -11,6 +11,7 @@ What have we done is a REST API build around the google Firebase REST API to sim
 
 - Routes, done
     + GET /
+    + GET /info
     + GET /:id
     + POST /
     + PATCH /
