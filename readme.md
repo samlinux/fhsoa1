@@ -20,6 +20,9 @@ What have we done is a REST API build around the google Firebase REST API to sim
 - API documentation, done
 - API tests, done
 
+## Running live example 
+A running version is available with a link from the author. The version is build with a docker images and runs under a docker-engine environment.
+
 ## Installation
 
 ### Install node.js 
@@ -66,4 +69,9 @@ node_modules/apidoc/bin/apidoc -i ./ -f "server.js" -o apidoc/
 cd [project home]  
 mocha test/TestClimateApi.js 
 ```
+
+# Dockerversion
+- download docker image for author
+- docker load -i <path to image tar file>
+- docker run -p 49160:3000 -d fhsoa1
 
