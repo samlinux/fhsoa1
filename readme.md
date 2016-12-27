@@ -70,8 +70,8 @@ cd [project home]
 mocha test/TestClimateApi.js 
 ```
 
-# Dockerversion
+# Run the docker version
 - download docker image for author
 - docker load -i <path to image tar file>
-- docker run -p 49160:3000 -d fhsoa1
+- docker run -p 49160:3000 -d fhsoa1_1
 
