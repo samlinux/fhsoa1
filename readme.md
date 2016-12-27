@@ -35,7 +35,7 @@ cd [project home]
 npm install
 ```
 
-**IMPORTANT: For the missing config file contact the author.**
+**IMPORTANT: For the missing config file contact the author OR**
 
 ### Get your own Firebase API key
 https://firebase.google.com/
