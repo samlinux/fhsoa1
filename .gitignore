@@ -1,0 +1,6 @@
+node_modules/
+log/
+.DS_Store
+ssoa_1.sublime-project
+ssoa_1.sublime-workspace
+config.js

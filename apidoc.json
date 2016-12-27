@@ -1,0 +1,10 @@
+{
+  "name": "FH-SOA climate API",
+  "version": "0.1.0",
+  "description": "REST API to store climate data in firebase",
+  "title": "",
+  "url" : "http//localhost:3000",
+  "header":{
+  	"title":"FH-SOA climate API"
+  }
+}
