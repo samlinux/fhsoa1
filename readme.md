@@ -20,8 +20,8 @@ What have we done is a REST API build around the google Firebase REST API to sim
 - API documentation, done
 - API tests, done
 
-## Running live example 
-A running version is available with a link from the author. The version is build with a docker images and runs under a docker-engine environment.
+## Running a live version 
+A running version is available with a link from the author. The version is build with as docker image and runs under a docker-engine environment.
 
 ## Installation
 
