@@ -24,7 +24,7 @@
 		var url = this.AppOptions.config.BaseUrl+
 				'/climate.json'+
 				this.AppOptions.config.Auth;
-
+		//console.log(url);		
 		this.AppOptions.request(url, function (err, response, body) {
 			if(err){ 
 				throw err;

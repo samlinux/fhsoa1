@@ -75,3 +75,6 @@ mocha test/TestClimateApi.js
 - docker load -i <path to image tar file>
 - docker run -p 49160:3000 -d fhsoa1_1
 
+docker save <image> | bzip2 | pv | ssh user@host 'bunzip2 | docker load'
+
+

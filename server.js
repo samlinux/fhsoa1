@@ -11,6 +11,7 @@ var GetClimateData = require('./app/GetClimateData.js').GetClimateData;
 var StoreClimateData = require('./app/StoreClimateData.js').StoreClimateData;
 var DeleteClimateData = require('./app/DeleteClimateData.js').DeleteClimateData;
 var GetClimateDetailData = require('./app/GetClimateDetailData.js').GetClimateDetailData;
+var SimulationClimateData = require('./app/SimulationClimateData.js').SimulationClimateData;
 
 // Setup all need libaries globally
 var AppOptions = {};
@@ -18,6 +19,7 @@ var AppOptions = {};
 	AppOptions.q = q;
 	AppOptions._ = _;
 	AppOptions.request = request;
+	AppOptions.simulationTimer = {};
 
 // Enable post data
 app.use(bodyParser.json());
@@ -31,6 +33,26 @@ app.use('/apidoc', express.static('apidoc'));
  */
 app.listen(3000, function () {
   console.log('app listen on port 3000!');
+});
+
+/**
+ * @api {get} /simulation/:modus Start or stop simulation
+ * @apiExample {curl} Example usage:
+ *   curl -i http://localhost:3000/simulation/on || off
+ * @apiGroup climate
+ *
+ * @apiSuccessExample Success-Response:
+ *	HTTP/1.1 200 OK
+ *	"data": "string"
+ * 
+ * @apiDescription start or stop the simulation, every 4 seconds random temperature and humidity data are send
+ */
+app.get('/simulation/:modus', function (req, res) {
+	AppOptions._.set(AppOptions,'reqParams',AppOptions._.cloneDeep(req.params));
+	var _a = new SimulationClimateData(AppOptions);
+		_a.init().then(function(result){
+			res.json({data:result});
+		});
 });
 
 /**
@@ -241,5 +263,7 @@ app.delete('/', function (req, res) {
 			res.json({data:result});
 		});
 });
+
+
 
 
