@@ -76,6 +76,8 @@ mocha test/TestClimateApi.js
 ```
 
 # Docker related notes
+As requirement a running docker-enging is required on the host operating system.
+
 - Helpful docker commands
     + docker images
     + docker ps 
