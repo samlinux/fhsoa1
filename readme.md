@@ -75,7 +75,7 @@ mocha test/TestClimateApi.js
 - docker build -t fh/soa1:v1 .
 - download docker image for author
 - docker load -i <path to image tar file>
-- docker run -p 49160:3000 -d <id>
+- docker run -p 49160:3000 -d <image>
 - docker save <image> | bzip2 | ssh user@host 'bunzip2 | docker load'
 
 

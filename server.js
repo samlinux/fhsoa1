@@ -19,7 +19,7 @@ var AppOptions = {};
 	AppOptions.q = q;
 	AppOptions._ = _;
 	AppOptions.request = request;
-	AppOptions.simulationTimer = {};
+	AppOptions.simulationTimer = null;
 
 // Enable post data
 app.use(bodyParser.json());

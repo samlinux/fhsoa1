@@ -37,12 +37,15 @@
 		if(this.Simulation === 'on'){
 			// start simulation
 			status = 'start simulation';
-			this.AppOptions.simulationTimer = setInterval(function(){
-				_this.sendRequest();}, (this.SendRequestInSeconds*1000));
+			if(this.AppOptions.simulationTimer === null){
+				this.AppOptions.simulationTimer = setInterval(function(){
+					_this.sendRequest();}, (this.SendRequestInSeconds*1000));	
+				}
 		} else {
 			// stop simulation
 			status = 'stop simulation';
 			clearInterval(this.AppOptions.simulationTimer);
+			this.AppOptions.simulationTimer = null;
 		}
 	
 		deferred.resolve(status);	
