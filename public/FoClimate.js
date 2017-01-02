@@ -118,7 +118,7 @@ FoClimate.prototype.roundTwoDecimals = function(number){
 
 /**
  * this is the tricky part
- * get the hight of the bar in percent from min and max
+ * get the height of the bar in percent from min and max
  */
 FoClimate.prototype.calcTemperatureBar = function(cValue){
 	// max temperature range
@@ -143,7 +143,6 @@ FoClimate.prototype.calcTemperatureBar = function(cValue){
 	bV += '%';
 	//console.log('test',bV);
 	return bV;
-
 };
 
 //---------------------------------
