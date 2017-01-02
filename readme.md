@@ -1,14 +1,14 @@
 #SOA data logger example
 This work is based on a seminar paper *A Security Threat Analysis for Cloud-based Temperature Sensor Solutions* by FH Burgenland. Roland Bole and Andree Niebuhr have worked on this.
 
-Questions to the sourc-code or other project releated questions please to one of the authors.
+Questions to the sourc-code or other project releated topics please to one of the authors.
 
 The solution is build on top of express.js and deployed as docker image. The docker image is based on alpine:3.4 and node.js 4.7.0, see the Dockerfile as well. 
 
 What have we done was a REST API build from scratch around googles Firebase REST API to simulate a climate datastorage process.
 
-- The API is accessible via http://<server>:<port>
-- The API documentation is available via route http://<server>:<port>/apidoc
+- The API is accessible via http://SERVER:PORT
+- The API documentation is available via route http://SERVER:PORT/apidoc
 
 ##Climate REST API includes 
 
