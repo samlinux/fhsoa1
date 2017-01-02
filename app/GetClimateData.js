@@ -11,8 +11,9 @@
  	 * Represents a GetClimateData object
  	 * @constructor
  	 */
-	var GetClimateData = function(appOptions){
+	var GetClimateData = function(appOptions,getLastValue){
 		this.AppOptions = appOptions;
+		this.GetLastValue = getLastValue;
 	};	
 
 	/**
@@ -32,8 +33,10 @@
 			
 			var _data = JSON.parse(response.body);
 			var data = [];
+			var cliamte = {};
+			// create an array for the output
 			_this.AppOptions._.forEach(_data, function(cData,cKey){
-				var cliamte = {};
+			
 				_this.AppOptions._.set(cliamte,'id',cKey);
 				
 				if(_this.AppOptions._.has(cData,'temperature')){
@@ -50,6 +53,11 @@
 
 				data.push(cliamte);
 			});
+			// get last an current value
+			if(_this.GetLastValue){
+				data = _this.AppOptions._.last(data);
+			}
+
 			deferred.resolve(data);
 		});
 

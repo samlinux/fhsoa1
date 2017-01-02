@@ -28,6 +28,9 @@ app.use(bodyParser.urlencoded({ extended: true }));
 // Set route for apidoc in static manner
 app.use('/apidoc', express.static('apidoc'));
 
+// Set route for public in static manner
+app.use('/public', express.static('public'));
+
 /**
  * API server listen on 
  */
@@ -80,7 +83,35 @@ app.get('/simulation/:modus', function (req, res) {
  * @apiDescription Provides all climate information from the firebase database
  */
 app.get('/', function (req, res) {
-	var _a = new GetClimateData(AppOptions);
+	var _a = new GetClimateData(AppOptions,false);
+		_a.getData().then(function(result){
+			res.json({data:result});
+		});
+});
+
+/**
+ * @api {get} /getLastValue Returns the last value
+ * @apiExample {curl} Example usage:
+ *   curl -i http://localhost:3000/getLastValue
+ * @apiGroup climate
+ *
+ * @apiSuccess {Object} climate Climate object
+ * @apiSuccess {Date} climate.timestamp date and time of the dataset
+ * @apiSuccess {Number} climate.temperature measured temperature 
+ * @apiSuccess {Number} climate.humidity measured humidity 
+ *
+ * @apiSuccessExample Success-Response:
+ *	HTTP/1.1 200 OK
+ *	"data": {
+ *			"id":"-KYthvj98TpxEPdIpFWW",
+ *			"timestamp": "2016-12-26 12:20:20",
+ *			"temperature": 12,
+ *			"humidity": 55
+ *   	}
+ * @apiDescription Retruns the last available climate dataset
+ */
+app.get('/getLastValue', function (req, res) {
+	var _a = new GetClimateData(AppOptions,true);
 		_a.getData().then(function(result){
 			res.json({data:result});
 		});
@@ -239,7 +270,7 @@ app.put('/', function (req, res) {
 /**
  * @api {delete} / Delete an existing dataset
  * @apiExample {curl} Example usage:
- * curl -X PULL -d '{"id":"-KZv9td4RRj4iui0HvtZ"} \
+ * curl -X DELETE -d '{"id":"-KZv9td4RRj4iui0HvtZ"} \
  * -i http://localhost:3000 "Content-Type: application/json"
  * @apiGroup climate
  *

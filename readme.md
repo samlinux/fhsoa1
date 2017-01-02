@@ -21,12 +21,13 @@ What have we done is a REST API build around the google Firebase REST API to sim
 - API tests, done
 
 ## Running a live version 
-A running version is available with a link from the author. The version is build with as docker image and runs under a docker-engine environment.
+A running version is available with a link from the author. The version is build as docker image and runs under a docker-engine environment.
 
 ## Installation
 
 ### Install node.js 
 If node.js is not already installed, please use this instructions https://nodejs.org/en/download/package-manager/.
+node.js version 4.7.0 is required.
 
 ### Clone the git repo
 https://github.com/samlinux/fhsoa1
@@ -70,11 +71,11 @@ cd [project home]
 mocha test/TestClimateApi.js 
 ```
 
-# Run the docker version
+# Docker notes
+- docker build -t fh/soa1:v1 .
 - download docker image for author
 - docker load -i <path to image tar file>
-- docker run -p 49160:3000 -d fhsoa1_1
-
-docker save <image> | bzip2 | pv | ssh user@host 'bunzip2 | docker load'
+- docker run -p 49160:3000 -d <id>
+- docker save <image> | bzip2 | ssh user@host 'bunzip2 | docker load'
 
 
