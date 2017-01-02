@@ -48,7 +48,7 @@ app.listen(3000, function () {
  *	HTTP/1.1 200 OK
  *	"data": "string"
  * 
- * @apiDescription start or stop the simulation, every 4 seconds random temperature and humidity data are send
+ * @apiDescription Start or stop the simulation, every 4 seconds random temperature and humidity data are send to the API
  */
 app.get('/simulation/:modus', function (req, res) {
 	AppOptions._.set(AppOptions,'reqParams',AppOptions._.cloneDeep(req.params));
@@ -108,7 +108,7 @@ app.get('/', function (req, res) {
  *			"temperature": 12,
  *			"humidity": 55
  *   	}
- * @apiDescription Retruns the last available climate dataset
+ * @apiDescription Returns the last available climate dataset
  */
 app.get('/getLastValue', function (req, res) {
 	var _a = new GetClimateData(AppOptions,true);
@@ -176,7 +176,7 @@ app.get('/:id', function (req, res) {
  * @apiParam {Double} humidity	current humidity
  * @apiParam {Date} timestampe	current date and time (format to use: YYYY-MM-DD HH:MM:SS)
  *
- * @apiDescription stores a new climate dataset
+ * @apiDescription Stores a new climate dataset
  *
  * @apiSuccess {String} key Id from the new dataset
  * @apiSuccessExample {json} Success
