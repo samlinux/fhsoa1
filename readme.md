@@ -93,4 +93,8 @@ A running Docker engine is required on the host operating system.
     - docker load -i <path to image tar file>
 
 
+# Change-Log
+**06.01.2017**
+- Missing copyright has been added to some files.
+- MIT license has been added to the project.
 
