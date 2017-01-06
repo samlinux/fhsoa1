@@ -1,3 +1,6 @@
+/**
+ * @author rbole <rbole@samlinux.at>
+ */
 // Global libs
 var express = require('express');
 var app = express();

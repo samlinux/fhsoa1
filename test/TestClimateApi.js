@@ -1,5 +1,6 @@
 /**
  * Climate REST API tests
+ * @author rbole <rbole@samlinux.at>
  */
 (function(){
 	'use strict';
